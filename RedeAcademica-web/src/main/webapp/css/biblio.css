@@ -1,0 +1,150 @@
+/* 
+    Document   : style
+    Created on : 12/04/2013, 18:45:21
+    Author     : rodrigo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+body{
+    margin:20px 0;
+}
+
+html{
+    background: url(../images/red-001.jpg);
+    background-size: 100%;
+    font:14px  arial, verdana; 
+    margin: 0px; 
+    padding:0px;
+}
+
+#topo{
+    width: 100%;
+    height: 70px;
+    margin-top: -20px;
+    background-image: url(../images/retangulo.png);
+}
+
+#bloco{
+    width: 600px;
+    height: 300px;
+    margin-top: 50px;
+    margin-left: 400px;
+    color: white;
+    background: url(../images/retangulo.png);
+    border-radius: 10px 10px 10px 10px;
+}
+
+#loginadm {
+    margin-left: 500px;
+    width: 350px;
+    height: 270px;
+}
+
+
+.labels{
+    font-size: 15px;
+    color: gray;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.campos{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 15px;
+    font-weight: bold;
+    width:140px;
+    height: 21px;
+    margin-top: -60px;
+    background-color: transparent;
+}
+
+.campos1{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 15px;
+    font-weight: bold;
+    width:140px;
+    height: 21px;
+    margin-top: 40px;
+    background-color: transparent;
+}
+
+#gridDoLogin{
+    margin-top: -20px;
+    width: 330px;
+    height: 250px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+
+.poha{
+    color: white;
+}
+#gridDoLogin3{
+    margin-top: -60px;
+    width: 300px;
+}
+
+#logo{
+   /* background: url(../images/test-logo.png);*/
+    background-size: 45%;
+    background-repeat: no-repeat;
+    margin-top: -105px;
+    position: absolute;
+    margin-left: 550px;
+    width: 580px;
+    height: 150px;
+}
+
+#bot{
+    background-color: transparent;
+   
+}
+
+#bot2{
+    background-color: transparent;
+    
+}
+
+.inv{
+    background: url(../images/retangulo.png);
+    border: none;
+}
+.ouxe{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+p{
+    text-align: justify;
+    margin-left: 30px;
+}
+ul li{
+    margin-left: 20px;
+}
+
+.tenso{
+    background: transparent;
+    border: none;
+}
+
+#footer{
+    width: 100%;
+    height: 75px;
+    margin-top: 104px;
+    position: absolute;
+    background: url(../images/retangulo.png);
+}
+
+.bt{
+    width: 600px;
+    height: 300px;
+   /* background: url(../images/s.png);*/
+    background-size: 100%;
+}

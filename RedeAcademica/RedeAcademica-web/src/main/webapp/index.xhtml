@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="ISO-8859-1">
+            <title>:. PPCompart - Conecte-se .:</title>
+            <link rel="icon" href="images/icone.png" type="image" />
+            <link rel="shortcut icon" href="images/icone.png" type="image" />
+            <link rel="stylesheet" type="text/css" href="css/styleRede.css" title="standard" />
+        </meta>
+        <!-- <link href="css/style.css" text="text/css" rel="stylesheet"/>-->
+
+        <style type="text/css">
+            .msnDeErro {
+                width: 400px;
+                background: #f99;
+                color: #fff;
+                list-style-type: none;
+                padding: 10px;
+            }
+        </style>
+        <title>PPCompart</title>
+    </h:head>
+    <h:body>
+
+
+        <div Class="top">
+            <img src="images/ifbranco.png" alt="Logo IFPB" id="ifpb"/>
+            <img src="images/Nome.png" alt="PPCompart" id="ifpbppcompart" width="400px"	/>
+        </div> 
+
+        <div styleClass="middle" >		
+            <div id="imag">		
+                <img src="images/fig.png" alt="mundo interligado" id="img" />
+            </div>		
+            <h:form styleClass="login">
+                <h:messages styleClass="caixaDeErro" globalOnly="true" showDetail="true" showSummary="false" />
+                <fieldset>
+                    <h1>Conecte-se</h1>
+                    <br /><br/>
+                    <label><h:outputText value="Login:" /></label>
+                    <p:inputText  id="campologin" required="true" requiredMessage="Login obrigatório" label="Login" value="#{UserBean.usuario.login}"/>  <br />
+                    <label> <h:outputText value="Senha:"/></label>
+                    <p:password id="camposenha" required="true" requiredMessage="Senha obrigatória" label="Senha" value="#{UserBean.usuario.senha}"/><br /><br />
+                    <!--<a href="#" id="esqueci"> Esqueci minha senha</a>-->
+                    <p:commandButton value="Entrar" action="#{UserBean.autenticarUsuario()}"/>
+                </fieldset>
+
+            </h:form>
+        </div>
+
+
+        <h:panelGrid class="footer">Copyright © IFPB 2013</h:panelGrid>
+
+
+
+    </h:body>
+</html>
+

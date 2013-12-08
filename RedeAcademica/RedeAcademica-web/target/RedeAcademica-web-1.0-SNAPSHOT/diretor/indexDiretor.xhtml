@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link href="../css/adm.css" text="text/css" rel="stylesheet"/>
+        <title>Diretor</title>
+    </h:head>
+    <h:body>
+        <h:form>   
+            <div id="topo">
+
+            </div>
+            <div id="logo"></div>
+            <p:megaMenu styleClass="inv">  
+
+                <p:menuitem value="Principal" url="indexDiretor.jsf" icon="ui-icon-check"/>
+
+                <p:menuitem value="Cadastrar" url="cadastrarUsuarios.jsf" icon="ui-icon-document"/>
+                
+                <p:menuitem value="Novo Grupo" url="cadastrarUsuarios.jsf" icon="ui-icon-document"/>
+                
+                <p:menuitem value="Histórico" url="listaDeRegistro.jsf" icon="ui-icon-document"/>
+
+                <p:menuitem value="Sair" action="#{UserBean.encerrarSessao()}" icon="ui-icon-close" />  
+            </p:megaMenu>  
+
+            <div id="conteudo">
+                <ui:insert name="conteudo">
+                    <div id="bloco">
+                        <br />
+                        <h1 class="ouxe">Olá, Diretor</h1>
+                        <br />
+                        <p>Aqui se encontra um espaço ideal para o cadastro de:</p>
+                        <ul>
+                            <li>Um outro DIRETOR</li>
+                            <li>Um novo COORDENADOR</li>
+                            <li>E a inclusão de um novo COLABORADOR</li>
+                            <li>E a Criação de um novo grupo para PPC</li>
+                        </ul>
+                        <br />
+                        <p>Divirta-se!</p>
+                    </div>
+                </ui:insert> 
+            </div>
+            
+            <div id="footer"></div>
+        </h:form>
+    </h:body>
+
+</html>
+

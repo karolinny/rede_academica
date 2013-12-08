@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Teste de Upload</title>
+    </h:head>
+    <h:body>
+        
+<h:form enctype="multipart/form-data" id="envia">
+                    <h1>Upload Multimídia - Texto</h1>
+
+                    <h:panelGrid columns="3">
+
+						
+						<h:outputLabel value="Enviar Arquivo"/>
+
+						<p:fileUpload label="Procurar..."
+						id="enviaProjeto"
+                                                fileUploadListener="#{cadastrarTextoManagerBean.processFileUpload}"
+						auto="false"
+                                                allowTypes="/(\.|\/)(doc|docx|docm|dotx|dot|pdf|xps|mht|mhtml|htm|html|rtf|txt|xml|odt)$/"
+                                                update="mensagem"
+						invalidFileMessage="Arquivo inválido!"
+						dragDropSupport="true"
+						invalidSizeMessage="Arquivo ultrapassa o limite permitido!"/>
+
+                                                
+                    <p:growl id="mensagem" showDetail="true"/>
+                    </h:panelGrid>
+                    
+                    <h:commandLink action="#{cadastrarImagemManagerBean.finalizar()}" value="Finalizar"/>        
+                </h:form>
+
+        
+    </h:body>
+</html>
+

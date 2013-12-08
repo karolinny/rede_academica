@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <ui:composition template="indexDiretor.xhtml">
+        <ui:define name="conteudo">
+            <div id="bloco">
+                <h:form>
+                    <p:panel header="Cadastrar Usuário" styleClass="tenso"> 
+
+
+                        <h:messages errorClass="error"/>  
+
+                        <h:panelGrid columns="3" columnClasses="label, value" styleClass="grid">
+
+                            <h:outputText class="poha" value="Nome: " />  
+                            <p:inputText id="nome" label="Nome" value="#{UserBean.usuarioColaborador.nome}" />
+                            <h:message for="nome" />
+
+                            <h:outputText class="poha" value="Email: " />  
+                            <p:inputText id="email" label="Email" value="#{UserBean.usuarioColaborador.email}" />
+                            <h:message for="email" />
+                            
+                            <h:outputText class="poha" value="Matrícula: " />  
+                            <p:inputText id="matricula" label="Matricula" value="#{UserBean.usuarioColaborador.matricula}" />
+                            <h:message for="matricula" />
+
+                            <h:outputText class="poha" value="Login: " />  
+                            <p:inputText id="login" label="Login" value="#{UserBean.usuarioColaborador.login}" />
+                            <h:message for="login" />
+
+                            <h:outputText class="poha" value="Senha: " />  
+                            <p:password id="senha" label="Senha" value="#{UserBean.usuarioColaborador.senha}"/> 
+                            <h:message for="senha" />
+
+                        </h:panelGrid>
+                        <br />
+                        <br />
+                        <h:panelGrid columns="2">
+
+                            <p:commandButton value="Salvar" action="#{UserBean.inserirUsuarioColaborador()}"/>
+                            <p:commandButton value="Apagar" type="reset"/>
+                        </h:panelGrid>
+                    </p:panel>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>

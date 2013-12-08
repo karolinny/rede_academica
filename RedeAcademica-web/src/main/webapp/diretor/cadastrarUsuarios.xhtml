@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <link href="../css/adm.css" text="text/css" rel="stylesheet"/>
+        <title>Administrador</title>
+    </h:head>
+    <h:body>
+        <h:form>   
+            <div id="topo">
+
+            </div>
+            <div id="logo"></div>
+            <p:megaMenu styleClass="inv">  
+
+                <p:menuitem value="Principal" url="indexAdmin.jsf" icon="ui-icon-check"/>
+
+                <p:menuitem value="Cadastrar" url="cadastrarUsuarios.jsf" icon="ui-icon-document"/>
+
+                <p:menuitem value="Histórico" url="listaDeRegistro.jsf" icon="ui-icon-document"/>
+
+                <p:menuitem value="Sair" action="#{UserBean.encerrarSessao()}" icon="ui-icon-close" />  
+            </p:megaMenu>  
+        </h:form>
+        <div id="conteudo">
+            <div id="bloco">
+                
+                <h:form>
+                    <p:panel header="Cadastro Geral" styleClass="tenso">  
+
+                        <h:panelGrid columns="2" columnClasses="label, value">
+                            <h:outputLabel class="poha" value="Nome: "/>
+                            <p:inputText value="#{UserBean.usuarioCadastro.nome}"/>
+
+                            <h:outputLabel class="poha" value="E-mail: "></h:outputLabel>
+                            <p:inputText value="#{UserBean.usuarioCadastro.email}"/>
+
+                            <h:outputLabel class="poha" value="Login: "></h:outputLabel>
+                            <p:inputText value="#{UserBean.usuarioCadastro.login}"/>
+
+                            <h:outputLabel class="poha" value="Senha: "></h:outputLabel>
+                            <p:password value="#{UserBean.usuarioCadastro.senha}"/>
+
+                            <h:outputLabel class="poha" value="Tipo: "></h:outputLabel>
+                            <p:selectOneMenu value="#{UserBean.usuarioCadastro.tipo}">
+                                <f:selectItem itemLabel="Colaborador" itemValue="COLABORADOR"/>
+                                <f:selectItem itemLabel="Diretor" itemValue="DIRETOR"/>
+                                <f:selectItem itemLabel="Coordenador" itemValue="COORDENADOR"/>
+
+                            </p:selectOneMenu>
+                        </h:panelGrid>
+                        <br />
+                        <p:commandButton value="Salvar" action="#{UserBean.inserirUsuario()}"></p:commandButton>
+                    </p:panel>
+                </h:form>
+            </div>
+        </div>
+        <div id="footer"></div>
+    </h:body>
+</html>
+

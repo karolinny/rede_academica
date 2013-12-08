@@ -1,0 +1,98 @@
+/* 
+    Document   : style
+    Created on : 12/04/2013, 18:45:21
+    Author     : rodrigo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+body{
+    margin:20px 0;
+}
+
+html{
+    background: url(../images/vintage.jpg);
+    background-size: 100%;
+    font:14px  arial, verdana; 
+    margin: 0px; 
+    padding:0px;
+}
+
+#loginadm {
+    margin-left: 500px;
+    width: 350px;
+    height: 270px;
+}
+
+
+.labels{
+    font-size: 15px;
+    color: gray;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.campos{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 15px;
+    font-weight: bold;
+    width:140px;
+    height: 21px;
+    margin-top: -60px;
+    background-color: transparent;
+}
+
+.campos1{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 15px;
+    font-weight: bold;
+    width:140px;
+    height: 21px;
+    margin-top: 40px;
+    background-color: transparent;
+}
+
+#gridDoLogin{
+    margin-top: -20px;
+    width: 330px;
+    height: 250px;
+    background-image: url(../images/form1.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.tenso{
+    background: url(../images/retangulo.png);
+}
+
+.poha{
+    color: white;
+}
+#gridDoLogin3{
+    margin-top: -60px;
+    width: 300px;
+}
+
+#logo{
+    background: url(../images/test-logo.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    margin-left: 400px;
+    width: 580px;
+    height: 270px;
+}
+
+#bot{
+    background-color: transparent;
+    width: 100px;
+    margin-left: 35px;
+}
+
+#bot2{
+    background-color: transparent;
+    width: 120px;
+    margin-left: -120px;
+}

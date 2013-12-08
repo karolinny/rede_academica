@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <ui:composition template="indexCoordenador.xhtml">
+        <ui:define name="conteudo">
+            <div id="bloco">
+                <h:form>
+                    <p:panel header="Cadastrar Usuário" styleClass="tenso"> 
+
+
+                        <h:messages errorClass="error"/>  
+
+                        <h:panelGrid columns="2" columnClasses="label, value" styleClass="grid">
+
+                        <h:outputText class="poha" value="Nome: " />  
+                        <p:inputText id="nome" required="true" title="O campo NOME é obrigatório" requiredMessage="O campo NOME é obrigatório" label="Nome" value="#{UserBean.usuarioColaborador.nome}" />
+                        <p:tooltip for="nome"  showEvent="focus" hideEvent="blur"/>
+                        <h:messages  for="nome"/>
+                        
+                        <h:outputText class="poha" value="Email: " />  
+                        <p:inputText id="email" required="true" title="O campo EMAIL é obrigatório" label="Email" value="#{UserBean.usuarioColaborador.email}" />  
+                        <p:tooltip for="email"  showEvent="focus" hideEvent="blur"/>
+                        <h:message for="email" />
+
+                        <h:outputText class="poha" value="Matrícula: " />  
+                        <p:inputText id="matricula" required="true" title="O campo MATRÍCULA é obrigatório" label="Matricula" value="#{UserBean.usuarioColaborador.matricula}" />  
+                        <p:tooltip for="matricula"  showEvent="focus" hideEvent="blur"/>
+                        <h:message for="matricula" />
+
+                        <h:outputText class="poha" value="Login: " />  
+                        <p:inputText  id="login" required="true" title="O campo LOGIN é obrigatório" label="Login" value="#{UserBean.usuarioColaborador.login}"/>  
+                        <p:tooltip for="login"  showEvent="focus" hideEvent="blur"/>
+                        <h:message for="login" />
+
+                        <h:outputText class="poha" value="Senha: " />  
+                        <p:password id="senha" required="true" label="Senha" promptLabel="por definir" weakLabel="fraca"  
+                                    goodLabel="media" strongLabel="dificil" feedback="true" value="#{UserBean.usuarioColaborador.senha}"/>
+                        <h:message for="senha" />
+                        
+                        </h:panelGrid>
+                       
+                        <h:panelGrid columns="2">
+
+                            <p:commandButton value="Salvar" action="#{UserBean.inserirUsuario()}"/>
+                            <p:commandButton value="Apagar" type="reset"/>
+                        </h:panelGrid>
+                    </p:panel>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>

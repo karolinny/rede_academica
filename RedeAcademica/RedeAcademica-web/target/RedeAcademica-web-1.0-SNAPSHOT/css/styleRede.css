@@ -1,0 +1,126 @@
+/*********** CABE�ALHO **************/
+
+.top{
+    float: center;
+    width: 1200px;
+    height: 15%;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #339933;
+}
+
+#ifpb, #ifpbppcompart{
+    margin-top: 10px;
+    margin-left: 26px;
+    height: 75px ;
+}
+#ifpbppcompart{
+    float: right;
+    margin-right: 200px;
+}
+
+/************ CONTE�DO CENTRAL **************/
+
+.middle{
+    float: left;
+    height: 80%;
+    width: 1200px;
+   
+}
+
+#img{
+    float: left;
+    margin-left:50px;
+    margin-top: 40px;
+
+}
+
+#imag{
+    width: 600px;
+    height: 500px;
+    float: left;
+}
+.login{
+    margin-left: 120px;
+    clear: right;
+    float:left;
+}
+
+/********** FORMUL�RIO ***************/
+
+label, input{
+    display: block;
+    float: left;
+}
+
+label{
+    text-align: left;
+    font-family: sans-serif;
+    margin-left: 15px;
+    margin-bottom: 1px;
+    width: 35px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+inputext{	
+    margin-bottom: 10px;
+    width:200px;
+    border: 1px solid;
+    margin-left: 10px;
+    padding:2px 3px 2px 5px;
+}
+
+fieldset {
+    float: right;
+    margin-top: 100px;
+    margin-right: 60px; 
+    width : 300px;
+    height : 226px;
+    border-color: #009900;
+}
+
+br{
+    clear:left;
+}
+
+/* Bot�o enviar do formul�rio*/
+.btn_enviar{
+    width: 90px;
+    float: right;
+    margin-right: 20px;
+    background-color: #339933;
+    height: 25px;
+    color: #FFFFFF;
+}
+
+/* link esqueci minha senha*/
+#esqueci{
+    margin-left: 30px;
+    color: #339933;
+}
+
+h1{
+    text-align: center;
+    font-weight:lighter;
+    height: 30px;
+    background-color: #339933;
+    margin-top: -4px;
+    margin-left: -11px;
+    margin-right: -11px;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+/************ RODAP� ****************/
+.footer{
+    text-align: center;
+    width: 1200px;
+    height: 3%;
+    color: #FFFFFF;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #339933;
+    font-family: sans-serif;
+}
+

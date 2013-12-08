@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head> 
+        <link href="../css/simple.css" text="text/css" rel="stylesheet"/>
+        <title>Usuário</title>
+    </h:head>
+    <h:body>
+        <h:form>   
+            <div id="topo">
+
+            </div>
+            <div id="logo"></div>
+            <p:megaMenu styleClass="inv">  
+
+                <p:menuitem value="Principal" url="indexUsuario.jsf" icon="ui-icon-check"/>
+
+                <p:submenu label="Adicionar" icon="ui-icon-document">  
+                    <p:column>
+                        <p:submenu label="Multimídia:">
+                            <p:menuitem value="Audio" action="#{cadastrarAudioManagerBean.inicializar()}"/>
+                            <p:menuitem value="Imagem" action="#{cadastrarImagemManagerBean.inicializar()}" />
+                            <p:menuitem value="Texto" action="#{cadastrarTextoManagerBean.inicializar()}" />
+                            <p:menuitem value="Vídeo" action="#{cadastrarVideoManagerBean.inicializar()}" />
+                        </p:submenu>
+                    </p:column>
+                    <p:column>
+                        <p:submenu label="Buscar:">
+                            <p:menuitem value="Audio" url="listarAudio.jsf" />
+                            <p:menuitem value="Imagem" url="listarImagem.jsf" />
+                            <p:menuitem value="Texto" url="listarTexto.jsf" />
+                            <p:menuitem value="Vídeo" url="listarVideo.jsf" />
+                        </p:submenu>
+                    </p:column>
+                </p:submenu> 
+
+                <p:menuitem value="Sair" action="#{UserBean.encerrarSessao()}" icon="ui-icon-close" />  
+            </p:megaMenu>  
+
+            <div id="conteudo">
+                 <ui:insert name="conteudo">
+                <div id="bloco">
+                    <br />
+                    <h1 class="ouxe">Seja bem vindo, #{UserBean.usuarioDaSessao().nome}, aqui você pode:</h1>
+                    <p>Adicionar arquivos multimídia que você achar interessante, dentre elas estão:</p>
+                    <ul>
+                        <li>Vídeos</li>
+                        <li>Audios</li>
+                        <li>Textos</li>
+                        <li>Imagem</li>
+                    </ul>
+                    <p>Além de, claro, conseguir ver o que existe no sistema com relação às mídias</p>
+                </div>
+                 </ui:insert>
+            </div>
+
+            <div id="footer"></div>
+        </h:form>
+    </h:body>
+</html>
+

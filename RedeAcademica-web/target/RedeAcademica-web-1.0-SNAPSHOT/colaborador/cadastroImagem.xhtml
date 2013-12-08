@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link href="../css/simple.css" text="text/css" rel="stylesheet"/>
+        <title>Usuário</title>
+    </h:head>
+    <h:body>
+        <h:form>   
+            <div id="topo">
+
+            </div>
+            <div id="logo"></div>
+            <p:megaMenu styleClass="inv">  
+
+                <p:menuitem value="Principal" url="indexUsuario.jsf" icon="ui-icon-check"/>
+
+                <p:submenu label="Adicionar" icon="ui-icon-document">  
+                    <p:column>
+                        <p:submenu label="Multimídia:">
+                            <p:menuitem value="Audio" action="#{cadastrarAudioManagerBean.inicializar()}"/>
+                            <p:menuitem value="Imagem" action="#{cadastrarImagemManagerBean.inicializar()}" />
+                            <p:menuitem value="Texto" action="#{cadastrarTextoManagerBean.inicializar()}" />
+                            <p:menuitem value="Vídeo" action="#{cadastrarVideoManagerBean.inicializar()}" />
+                        </p:submenu>
+                    </p:column>
+                </p:submenu>
+                <p:submenu label="Buscar" icon="ui-icon-document">  
+                    <p:column>
+                        <p:submenu label="Por Seções:">
+                            <p:menuitem value="Audio" url="#"/>
+                            <p:menuitem value="Imagem" url="#" />
+                            <p:menuitem value="Texto" url="#" />
+                            <p:menuitem value="Vídeo" url="#" />
+                        </p:submenu>
+                    </p:column>
+                </p:submenu> 
+
+                <p:menuitem value="Sair" action="#{UserBean.encerrarSessao()}" icon="ui-icon-close" />  
+            </p:megaMenu>  
+
+        </h:form>
+        <div id="conteudo">
+            <div id="bloco">
+                <h:form enctype="multipart/form-data" id="envia">
+                    <p:panel header="Cadastro de Imagem" styleClass="tenso">  
+                        <h:panelGrid columns="3" columnClasses="label, value">
+
+                            <h:outputLabel styleClass="poha" value="Título do Arquivo: "/>
+                            <h:inputText id="nome" required="true" requiredMessage="Campo Título do Arquivo é obrigatório!"  value="#{cadastrarImagemManagerBean.imagem.nome}" />
+                            <h:message for="nome" />
+
+                            <h:outputLabel styleClass="poha" value="Resolução: "/>
+                            <h:inputText id="album" required="true" requiredMessage="Campo Resolução é obrigatório!"  value="#{cadastrarImagemManagerBean.imagem.resolucao}" />
+                            <h:message for="album" />                
+
+                            <h:outputLabel styleClass="poha" value="Extensão do Arquivo: "/>
+                            <h:inputText id="arquivo" required="true" requiredMessage="Campo Extensão do Arquivo é obrigatório!"  value="#{cadastrarImagemManagerBean.imagem.extensao}" />
+                            <h:message for="arquivo" />
+                            <p:commandButton value="Enviar" action="#{cadastrarImagemManagerBean.efetuarCadastroImagem()}" />                            
+
+                        </h:panelGrid>
+                    </p:panel>
+                </h:form>
+            </div>
+
+        </div>
+
+        <div id="footer"></div>
+
+    </h:body>
+</html>
+

@@ -1,0 +1,141 @@
+/* 
+    Document   : style
+    Created on : 12/04/2013, 18:45:21
+    Author     : rodrigo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+body{
+    margin:20px 0;
+}
+
+html{
+    font:14px  arial, verdana; 
+    margin:0px; 
+    padding:0px;
+    background: url(../images/vintage.jpg);
+    background-size: 100%;
+}
+
+#cabecalho{
+    float: left;
+    background-color: #6666ff;
+    width:70%;
+    height:50px;
+    display:block;
+    color:white;
+    margin-left: 170px;
+    border-radius:4px;
+}
+
+#menu{
+    float: left;
+    background-color: #FFFFFF;
+    width:70%;
+    height:50px;
+    padding:37px 0 7px;
+}
+
+#interior{
+    clear: left;
+    width:700px;
+    height:425px;
+    margin-left: 180px;
+    margin-top: 0px;
+    border-bottom: 2px solid #EEE;
+    padding:0px 40px;
+}
+
+#conteudo{
+    float: left;
+    min-width: 440px;
+    height:200px;
+    margin-left: 380px;
+    margin-top: 100px;
+    border: 2px dotted #424548;
+    border-radius: 10px
+}
+
+
+.texto{
+    border: 1px solid darkslategray;
+    padding: 5px;
+    font-size: 16px;
+    float:left;
+    width: 200px;
+}
+.botao{
+    clear: left;
+    float: left;
+    width: 90px;
+    height: 30px;
+    margin-top: 5px;
+    background-color:#424548;
+    color:white;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px;
+    border: 0px;
+}
+
+.links:hover{
+    background-color:#D9D9D9;
+}
+
+.links:focus{
+    background-color:#D9D9D9;
+}
+
+.links:active{
+    background-color:black;
+}
+
+.formInterno {
+    float: left;
+    margin-left: 80px;
+    margin-top: 40px;
+    
+    
+}
+#link{
+    float: left;
+    margin-left: 160px;
+}
+
+.links{
+    margin-left: 15px;
+    margin-right: 15px;
+    color: white;
+    
+}
+
+#bot2{
+    background-color: transparent;
+}
+
+#loginadm {
+    margin-left: 450px;
+    width: 480px;
+    height: 270px;
+   
+}
+
+.tenso{
+    background: url(../images/retangulo.png);
+}
+
+.poha{
+    color: white;
+}
+
+#logo{
+    background: url(../images/test-logo.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    margin-left: 400px;
+    width: 580px;
+    height: 270px;
+}

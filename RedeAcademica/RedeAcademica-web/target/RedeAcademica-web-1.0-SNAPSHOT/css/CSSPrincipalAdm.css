@@ -1,0 +1,148 @@
+
+#principal{
+    margin-left: auto;
+    width:260px;   
+   
+}
+
+#principal{
+    
+    width:460px;
+    height:320px;
+    border-radius:18px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    
+    
+    }   
+    
+#centro{
+    
+    
+    margin:55px;
+    box-shadow: 0px 0px 5px 5px #454545;
+    padding: 15px 0 15px 15px;
+    border: none;
+    margin-left: 10px;
+    margin-bottom: 10px;
+   
+}
+label.descricao{
+    clear: left;
+    width: 130px;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #070733;
+    font-size: 18px;
+}
+
+#principal {
+   
+    color:#6666ff;
+   
+    
+    
+}
+#lista{
+    
+    float: right;
+    
+    
+}
+.obrigatorio{
+    
+    clear: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    width: 220px;
+    border-radius:4px;
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+    background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#EEEEEE', GradientType=0);
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+}
+.boton.boton{
+    font-size:13px;
+    font-family:Arial;
+    font-weight:bold;
+    color:white;
+    background:#6666ff;
+    border:1px solid grey;
+    border-radius:3px;    
+    margin-left: 20px;   
+    margin-right: 20px
+}
+
+
+
+#cadastrar{
+    width: 100px;
+    margin-left: 18px;
+}
+
+.tenso{
+    background: url(../images/retangulo.png);
+}
+
+.poha{
+    color: white;
+}
+
+#cabid{
+    
+    text-decoration: none;
+    font-size: 18px;
+    width: 150px;
+    text-align: center;
+    color: #0D0C61;
+}
+#cabnome{
+    text-decoration: none;
+    margin-right: 50px;
+    width: 150px;
+    font-size: 18px;
+    text-align: center;
+    color: #0D0C61;
+}
+
+
+#cabnome1{
+    
+    text-decoration: none;
+    margin-right: 50px;
+    width: 750px;
+    font-size: 18px;
+    text-align: center;
+    color: #0D0C61;
+}
+#cabnome2{
+    text-decoration: none;
+    margin-right: 10px;
+    width: 750px;
+    font-size: 18px;
+    text-align: center;
+    color: #0D0C61;
+}
+
+
+
+#dataincio{
+    
+    
+    
+
+}
+#datafim{
+    
+    text-align: center;
+    color: #0D0C61;
+    width: 1600px;
+    font-size: 16px;
+
+}
