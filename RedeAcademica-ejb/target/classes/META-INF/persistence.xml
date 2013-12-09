@@ -3,7 +3,6 @@
   <persistence-unit name="RedeAcademica" transaction-type="JTA">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <jta-data-source>RedeAcademica_JNDI</jta-data-source>
-    <class>br.edu.ifpb.entidades.Grupo</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <shared-cache-mode>NONE</shared-cache-mode>
     <properties>

@@ -43,7 +43,12 @@
 
                             <h:outputLabel class="poha" value="Senha: "></h:outputLabel>
                             <p:password value="#{UserBean.usuarioCadastro.senha}"/>
-
+                            
+                            <h:outputLabel class="poha" value="Foto: "></h:outputLabel>
+                            <p:fileUpload id="upload" fileUploadListener="#{UserBean.uploadAction}"  mode="advanced"  
+                                       auto="true" sizeLimit="100000" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"/>
+                           
+                            
                             <h:outputLabel class="poha" value="Tipo: "></h:outputLabel>
                             <p:selectOneMenu value="#{UserBean.usuarioCadastro.tipo}">
                                 <f:selectItem itemLabel="Colaborador" itemValue="COLABORADOR"/>

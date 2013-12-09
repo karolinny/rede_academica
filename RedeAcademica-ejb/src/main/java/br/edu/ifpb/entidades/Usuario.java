@@ -52,6 +52,8 @@ public class Usuario implements Serializable {
     private String matricula;
     @Enumerated(EnumType.STRING)
     private Usuario.Tipo tipo;
+    @Column
+    private String foto;
 
     public Integer getId() {
         return id;
@@ -115,6 +117,14 @@ public class Usuario implements Serializable {
 
     public void setTipo(Usuario.Tipo tipo) {
         this.tipo = tipo;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
     @Override

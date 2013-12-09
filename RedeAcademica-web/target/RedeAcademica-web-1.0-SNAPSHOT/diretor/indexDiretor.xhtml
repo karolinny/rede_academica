@@ -9,24 +9,23 @@
         <title>Diretor</title>
     </h:head>
     <h:body>
+        <div id="tudo">
         <h:form>   
-            <div id="topo">
-
-            </div>
+            <div id="topo"><p>AcadGroup</p></div>
             <div id="logo"></div>
             <p:megaMenu styleClass="inv">  
 
                 <p:menuitem value="Principal" url="indexDiretor.jsf" icon="ui-icon-check"/>
 
-                <p:menuitem value="Cadastrar" url="cadastrarUsuarios.jsf" icon="ui-icon-document"/>
+                <p:menuitem value="Gerenciar Contas" url="cadastrarUsuarios.jsf" icon="ui-icon-wrench"/>
                 
-                <p:menuitem value="Novo Grupo" url="cadastrarGrupos.jsf" icon="ui-icon-document"/>
+                <p:menuitem value="Gerenciar Grupos" url="gerenciargrupos.jsf" icon="ui-icon-wrench"/>
                 
                 <p:menuitem value="Histórico" url="listaDeRegistro.jsf" icon="ui-icon-document"/>
                 
                 <p:menuitem value="Meus Grupos" url="listaDeRegistro.jsf" icon="ui-icon-document"/>
-
-                <p:menuitem value="Sair" action="#{UserBean.encerrarSessao()}" icon="ui-icon-close" />  
+                
+                <p:menuitem value="Sair" action="#{UserBean.encerrarSessao()}" icon="ui-icon-extlink" />  
             </p:megaMenu>  
 
             <div id="conteudo">
@@ -48,8 +47,9 @@
                 </ui:insert> 
             </div>
             
-            <div id="footer"></div>
+            <div id="footer">Copyright © IFPB 2013</div>
         </h:form>
+        </div>
     </h:body>
 
 </html>

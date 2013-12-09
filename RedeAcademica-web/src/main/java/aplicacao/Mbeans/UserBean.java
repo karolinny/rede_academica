@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package aplicacao.Mbeans;
 
 import br.edu.ifpb.beans.HistoricoSessionBeanLocal;
@@ -24,11 +21,8 @@ import javax.faces.bean.SessionScoped;
 
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
+import org.primefaces.event.FileUploadEvent;
 
-/**
- *
- * @author sales
- */
 @ManagedBean(name = "UserBean")
 @SessionScoped
 public class UserBean implements Serializable {
@@ -36,6 +30,7 @@ public class UserBean implements Serializable {
     private Usuario usuario = new Usuario();
     private Usuario usuarioColaborador = new Usuario();
     private Usuario usuarioCadastro = new Usuario();
+    private UploadArquivo arquivo = new UploadArquivo();
     @EJB
     private UserSessionBeanLocal userSessionB;
     @EJB
@@ -83,6 +78,11 @@ public class UserBean implements Serializable {
     public void setUsuarioCadastro(Usuario usuarioCadastro) {
         this.usuarioCadastro = usuarioCadastro;
     }
+    
+    public void uploadAction (FileUploadEvent event){
+	this.arquivo.fileUpload(event, ".jpg", "/image/");
+	this.usuario.setFoto(this.arquivo.getNome());
+	}
 
     public String autenticarUsuario() throws IOException {
         String paginaRetorno = "index.jsf";
@@ -124,8 +124,10 @@ public class UserBean implements Serializable {
         String paginaRetorno = "indexDiretor.jsf";
 
         userSessionB.inserirUsuario(usuarioCadastro);
+        this.arquivo.gravar();
         gerarHistoricoDeAcesso("inserindo um usuario no sistema" + " nome: " + usuarioCadastro.getNome());
         usuarioCadastro = new Usuario();
+        this.arquivo = new UploadArquivo();
         FacesContext.getCurrentInstance().getExternalContext().redirect(paginaRetorno);
         return paginaRetorno;
     }
