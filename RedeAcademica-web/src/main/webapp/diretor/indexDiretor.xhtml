@@ -29,21 +29,19 @@
             </p:megaMenu>  
 
             <div id="conteudo">
+              
                 <ui:insert name="conteudo">
-                    <div id="bloco">
-                        <br />
-                        <h1 class="ouxe">Olá, Diretor</h1>
-                        <br />
-                        <p>Aqui se encontra um espaço ideal para o cadastro de:</p>
-                        <ul>
-                            <li>Um outro DIRETOR</li>
-                            <li>Um novo COORDENADOR</li>
-                            <li>E a inclusão de um novo COLABORADOR</li>
-                            <li>E a Criação de um novo grupo para PPC</li>
-                        </ul>
-                        <br />
-                        <p>Divirta-se!</p>
+                    <div id="perfil">
+                        <p:panel id="lateralesquerda">  
+                        <p:graphicImage value="#{UserBean.usuarioDaSessao.foto}" width="120px" height="155px" /> 
+                        <div id="menuesquerda">
+                        <a href="#">Editar Perfil</a>
+                        <a href="#">Localizar amigos</a>
+                        <a href="#">Ver amigos</a>
+                        </div>
+                        </p:panel>
                     </div>
+                   
                 </ui:insert> 
             </div>
             

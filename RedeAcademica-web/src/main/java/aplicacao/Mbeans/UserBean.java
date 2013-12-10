@@ -33,6 +33,7 @@ public class UserBean implements Serializable {
     private Usuario usuarioColaborador = new Usuario();
     private Usuario usuarioCadastro = new Usuario();
     private UploadArquivo arquivo = new UploadArquivo();
+    private Usuario usuarioDaSessao = new Usuario();
     @EJB
     private UserSessionBeanLocal userSessionB;
     @EJB
@@ -136,9 +137,18 @@ public class UserBean implements Serializable {
         return paginaRetorno;
     }
 
+    public Usuario getUsuarioDaSessao() {
+        return usuarioDaSessao;
+    }
+
+    public void setUsuarioDaSessao(Usuario usuarioDaSessao) {
+        this.usuarioDaSessao = usuarioDaSessao;
+    }
+    
+
     public Usuario usuarioDaSessao() {
 
-        Usuario usuarioDaSessao = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("currentUser");
+        usuarioDaSessao = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("currentUser");
 
         return usuarioDaSessao;
     }
@@ -175,13 +185,13 @@ public class UserBean implements Serializable {
             String nomeArquivo = event.getFile().getFileName();    
             FacesContext facesContext = FacesContext.getCurrentInstance();    
             ServletContext scontext = (ServletContext) facesContext.getExternalContext().getContext();    
-            String arquivo = scontext.getRealPath("/uploads/perfil/" + nomeArquivo + new java.util.Date().getTime());  
+            String arquivo = scontext.getRealPath("/uploads/perfil/" + new java.util.Date().getTime()+ nomeArquivo );  
               
             File f=new File(arquivo);  
             if(!f.getParentFile().exists())f.getParentFile().mkdirs();  
             if(!f.exists())f.createNewFile();  
             
-            this.usuarioCadastro.setFoto(f.getAbsolutePath());
+            this.usuarioCadastro.setFoto("/uploads/perfil/" + new java.util.Date().getTime()+ nomeArquivo);
             System.out.println(f.getAbsolutePath());  
             FileOutputStream fos=new FileOutputStream(arquivo);  
             fos.write(foto);  
