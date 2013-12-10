@@ -81,11 +81,6 @@ public class UserBean implements Serializable {
         this.usuarioCadastro = usuarioCadastro;
     }
 
-    public void uploadAction(FileUploadEvent event) {
-        this.arquivo.fileUpload(event, ".jpg", "/image/");
-        this.usuario.setFoto(this.arquivo.getNome());
-    }
-
     public String autenticarUsuario() throws IOException {
         String paginaRetorno = "index.jsf";
 
@@ -126,10 +121,8 @@ public class UserBean implements Serializable {
         String paginaRetorno = "indexDiretor.jsf";
 
         userSessionB.inserirUsuario(usuarioCadastro);
-     //   this.arquivo.gravar();
         gerarHistoricoDeAcesso("inserindo um usuario no sistema" + " nome: " + usuarioCadastro.getNome());
         usuarioCadastro = new Usuario();
-        this.arquivo = new UploadArquivo();
         FacesContext.getCurrentInstance().getExternalContext().redirect(paginaRetorno);
         return paginaRetorno;
     }
@@ -141,7 +134,6 @@ public class UserBean implements Serializable {
         usuarioColaborador = new Usuario();
         FacesContext.getCurrentInstance().getExternalContext().redirect(paginaRetorno);
         return paginaRetorno;
-
     }
 
     public Usuario usuarioDaSessao() {
@@ -173,27 +165,30 @@ public class UserBean implements Serializable {
     }
 
     public void doUpload(FileUploadEvent event) {
+        System.out.println("testando foto");
          FacesMessage msg = new FacesMessage(event.getFile().getFileName() + " foi enviado com sucesso.");  
         FacesContext.getCurrentInstance().addMessage(null, msg);  
         // Do what you want with the file          
-        try {  
+        try{
+            System.out.println("entrei no try");
             byte[] foto = event.getFile().getContents();  
             String nomeArquivo = event.getFile().getFileName();    
             FacesContext facesContext = FacesContext.getCurrentInstance();    
             ServletContext scontext = (ServletContext) facesContext.getExternalContext().getContext();    
-            String arquivo = scontext.getRealPath("/uploads/imagensTopo/" + nomeArquivo);  
-            this.usuario.setFoto(arquivo);  
-//            String arquivo = scontext.getContextPath()+"/uploadis/" + nomeArquivo;  
+            String arquivo = scontext.getRealPath("/uploads/perfil/" + nomeArquivo + new java.util.Date().getTime());  
+              
             File f=new File(arquivo);  
             if(!f.getParentFile().exists())f.getParentFile().mkdirs();  
             if(!f.exists())f.createNewFile();  
+            
+            this.usuarioCadastro.setFoto(f.getAbsolutePath());
             System.out.println(f.getAbsolutePath());  
             FileOutputStream fos=new FileOutputStream(arquivo);  
             fos.write(foto);  
             fos.flush();  
             fos.close();  
-        } catch (IOException e) {  
-            e.printStackTrace();  
-        }  
+        }catch(IOException e){
+            
+        }
     }
 }

@@ -53,7 +53,7 @@ public class UploadArquivo {
     public void gravar() {
 
         try {
-
+            System.out.println("Gravando foto");
             FileOutputStream fos;
             fos = new FileOutputStream(this.caminho);
             fos.write(this.arquivo);
