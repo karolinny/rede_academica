@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+   <ui:composition template="indexDiretor.xhtml">
+        <ui:define name="conteudo">
+            <div id="conteudo">
+                <ui:insert name="GERENCIAR GRUPOS">
+                    <div id="bloco">
+                        
+                        <p:panel header="O que deseja fazer ?">
+                       
+                        <a href="cadastrarGrupos.jsf" >CRIAR GRUPO</a>
+                        <a href="#">EXCLUIR GRUPO</a>
+                        <a href="#">EDITAR GRUPO</a>
+                            
+                        </p:panel>
+                        
+                    </div>
+                </ui:insert> 
+            </div>
+            
+            <div id="footer"></div>
+        </ui:define>
+    </ui:composition>
+
+</html>
+
