@@ -1,4 +1,3 @@
-
 package aplicacao.Mbeans;
 
 import br.edu.ifpb.beans.HistoricoSessionBeanLocal;
@@ -6,6 +5,8 @@ import br.edu.ifpb.beans.UserSessionBeanLocal;
 import br.edu.ifpb.entidades.Historico;
 
 import br.edu.ifpb.entidades.Usuario;
+import java.io.File;
+import java.io.FileOutputStream;
 
 
 import java.io.IOException;
@@ -20,6 +21,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import javax.faces.context.FacesContext;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import org.primefaces.event.FileUploadEvent;
 
@@ -78,11 +80,11 @@ public class UserBean implements Serializable {
     public void setUsuarioCadastro(Usuario usuarioCadastro) {
         this.usuarioCadastro = usuarioCadastro;
     }
-    
-    public void uploadAction (FileUploadEvent event){
-	this.arquivo.fileUpload(event, ".jpg", "/image/");
-	this.usuario.setFoto(this.arquivo.getNome());
-	}
+
+    public void uploadAction(FileUploadEvent event) {
+        this.arquivo.fileUpload(event, ".jpg", "/image/");
+        this.usuario.setFoto(this.arquivo.getNome());
+    }
 
     public String autenticarUsuario() throws IOException {
         String paginaRetorno = "index.jsf";
@@ -90,7 +92,7 @@ public class UserBean implements Serializable {
         Usuario user = userSessionB.recuperarAdministradorLogin(usuario.getLogin(), usuario.getSenha());
         if (user.getLogin() == null) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Erro de autenticação", "Login ou senha inválidos"));
-            FacesContext.getCurrentInstance().getExternalContext().redirect(paginaRetorno);
+          // FacesContext.getCurrentInstance().getExternalContext().redirect(paginaRetorno);
         } else {
             if (usuario.getSenha().equals(user.getSenha())) {
                 FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("currentUser", user);
@@ -124,7 +126,7 @@ public class UserBean implements Serializable {
         String paginaRetorno = "indexDiretor.jsf";
 
         userSessionB.inserirUsuario(usuarioCadastro);
-        this.arquivo.gravar();
+     //   this.arquivo.gravar();
         gerarHistoricoDeAcesso("inserindo um usuario no sistema" + " nome: " + usuarioCadastro.getNome());
         usuarioCadastro = new Usuario();
         this.arquivo = new UploadArquivo();
@@ -168,5 +170,30 @@ public class UserBean implements Serializable {
         usuario = new Usuario();
         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().clear();
         FacesContext.getCurrentInstance().getExternalContext().redirect("../index.jsf");
+    }
+
+    public void doUpload(FileUploadEvent event) {
+         FacesMessage msg = new FacesMessage(event.getFile().getFileName() + " foi enviado com sucesso.");  
+        FacesContext.getCurrentInstance().addMessage(null, msg);  
+        // Do what you want with the file          
+        try {  
+            byte[] foto = event.getFile().getContents();  
+            String nomeArquivo = event.getFile().getFileName();    
+            FacesContext facesContext = FacesContext.getCurrentInstance();    
+            ServletContext scontext = (ServletContext) facesContext.getExternalContext().getContext();    
+            String arquivo = scontext.getRealPath("/uploads/imagensTopo/" + nomeArquivo);  
+            this.usuario.setFoto(arquivo);  
+//            String arquivo = scontext.getContextPath()+"/uploadis/" + nomeArquivo;  
+            File f=new File(arquivo);  
+            if(!f.getParentFile().exists())f.getParentFile().mkdirs();  
+            if(!f.exists())f.createNewFile();  
+            System.out.println(f.getAbsolutePath());  
+            FileOutputStream fos=new FileOutputStream(arquivo);  
+            fos.write(foto);  
+            fos.flush();  
+            fos.close();  
+        } catch (IOException e) {  
+            e.printStackTrace();  
+        }  
     }
 }

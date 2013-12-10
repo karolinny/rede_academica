@@ -1,5 +1,30 @@
 /*********** CABE�ALHO **************/
-
+#topo{
+    width: 100%;
+    height: 40px;
+    margin-top: -20px;
+    background-color: green;
+    /*text-align: left;*/
+    color: #FFFFFF;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: medium;
+}
+#topoesquerda{
+    float:left;
+    text-align: left;
+    width: 50px;
+    margin-left: 25px;
+    padding-top: 8px;
+}
+#topodireita{
+    float:left;
+    width: 150px;
+    padding-top: 8px;
+    margin-left: 75%;
+    text-align: right;
+    
+        
+}
 .top{
     float: center;
     width: 1200px;
