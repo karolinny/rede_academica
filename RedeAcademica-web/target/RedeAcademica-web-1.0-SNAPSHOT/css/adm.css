@@ -145,11 +145,17 @@ html{
         
 }
 
-#ifpb{
-    
+#menucentral{
+    float: left;
+}
+ul{
+    margin-top: 50px;
+    margin-bottom: 250px;
 }
 ul li{
-    margin-left: 20px;
+    
+    margin-left: 180px;
+    list-style:none;
 }
 
 .tenso{
@@ -191,11 +197,28 @@ ul li{
     
 }
 #perfil{
+    float: left;
+    width: 158px;
     margin-left: 10%;
     margin-top: 2%;
-    margin-right: 76%;
+    
+   
+   
 }
 
 #menuesquerda{
     margin-top: 5%;
+}
+
+a:link 
+{ 
+ text-decoration:none; 
+} 
+
+#grupos{
+    float: left;
+    margin-top: 2%;
+    width: 700px;
+    
+    
 }

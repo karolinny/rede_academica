@@ -9,11 +9,15 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 @Entity
-@NamedQuery(name = "grupo.recuperar", query = "SELECT g from Grupo g ")
+@NamedQueries({
+    @NamedQuery(name = "grupo.recuperar", query = "SELECT g from Grupo g "),
+    @NamedQuery(name = "grupo.recuperapordiretor", query = "SELECT g FROM Grupo g WHERE g.id_criador = :diretor")    
+})
 public class Grupo implements Serializable {
 
     private enum tipo {
@@ -34,6 +38,7 @@ public class Grupo implements Serializable {
     private List<Texto> textos;
     private String status;
     private String descricao;
+    private Long id_criador;
 
     public String getStatus() {
         return status;
@@ -90,4 +95,14 @@ public class Grupo implements Serializable {
     public void setTextos(List<Texto> textos) {
         this.textos = textos;
     }
+
+    public Long getId_criador() {
+        return id_criador;
+    }
+
+    public void setId_criador(Long id_criador) {
+        this.id_criador = id_criador;
+    }
+    
+    
 }

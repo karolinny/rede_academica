@@ -1,7 +1,7 @@
 package br.edu.ifpb.beans;
 
 import br.edu.ifpb.entidades.Grupo;
-import br.edu.ifpb.entidades.Historico;
+import br.edu.ifpb.entidades.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -31,5 +31,16 @@ public class GrupoSessionBean implements GrupoSessionBeanLocal {
         Query query = grupoSession.createNamedQuery("grupo.recuperar");
         grupos = query.getResultList();
         return grupos;
+    }
+    
+    public List<Grupo> receperarGrupoDiretor(Long id) {
+        List<Grupo> gruposdiretor = new ArrayList<Grupo>();
+        try {
+            Query query = grupoSession.createNamedQuery("grupo.recuperapordiretor");
+            query.setParameter("diretor", id);
+            gruposdiretor = query.getResultList();
+        } catch (Exception e) {
+        }
+        return gruposdiretor;
     }
 }

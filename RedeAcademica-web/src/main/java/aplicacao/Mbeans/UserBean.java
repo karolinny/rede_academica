@@ -191,7 +191,7 @@ public class UserBean implements Serializable {
             if(!f.getParentFile().exists())f.getParentFile().mkdirs();  
             if(!f.exists())f.createNewFile();  
             
-            this.usuarioCadastro.setFoto("/uploads/perfil/" + new java.util.Date().getTime()+ nomeArquivo);
+            this.usuarioCadastro.setFoto("/uploads/perfil/" + nomeArquivo);
             System.out.println(f.getAbsolutePath());  
             FileOutputStream fos=new FileOutputStream(arquivo);  
             fos.write(foto);  

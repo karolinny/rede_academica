@@ -17,7 +17,7 @@
 
                 <p:menuitem value="Principal" url="indexDiretor.jsf" icon="ui-icon-check"/>
 
-                <p:menuitem value="Gerenciar Contas" url="cadastrarUsuarios.jsf" icon="ui-icon-wrench"/>
+                <p:menuitem value="Gerenciar Contas" url="gerenciarcontas.jsf" icon="ui-icon-wrench"/>
                 
                 <p:menuitem value="Gerenciar Grupos" url="gerenciargrupos.jsf" icon="ui-icon-wrench"/>
                 
@@ -31,6 +31,7 @@
             <div id="conteudo">
               
                 <ui:insert name="conteudo">
+               
                     <div id="perfil">
                         <p:panel id="lateralesquerda">  
                         <p:graphicImage value="#{UserBean.usuarioDaSessao.foto}" width="120px" height="155px" /> 
@@ -40,8 +41,12 @@
                         <a href="#">Ver amigos</a>
                         </div>
                         </p:panel>
+                        <!--p:panel id="menucentral">
+                            <h:outputLabel class="poha" value="Atualização"/>
+                        </p:panel-->
+                        
                     </div>
-                   
+               
                 </ui:insert> 
             </div>
             

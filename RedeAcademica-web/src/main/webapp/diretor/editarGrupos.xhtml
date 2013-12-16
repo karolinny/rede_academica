@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+   <ui:composition template="indexDiretor.xhtml">
+        <ui:define name="conteudo">
+            <div id="conteudo"> 
+                <ui:insert name="conteudo">                    
+                </ui:insert>   
+                
+                <ui:insert name="Editar Grupo">
+                    <div id="grupos">
+                        
+                        <p:panel header="Editar grupos" >
+                            <ul>
+                                <li><a href="#"><img src="../images/icones/user.png"/> &nbsp;ADICIONAR PARTICIPANTES</a></li>
+                                <li><a href="#"><img src="../images/icones/document.png"/> &nbsp;CABEÇALHO</a></li>
+                                <li><a href="#"><img src="../images/icones/document.png"/> &nbsp;CAPA</a></li>
+                                <li><a href="#"><img src="../images/icones/document.png"/> &nbsp;CONTRA-CAPAS</a></li>
+                                <li><a href="#"><img src="../images/icones/attachment.png"/> &nbsp;SUMÁRIO</a></li>
+                                <li><a href="#"><img src="../images/icones/add.png"/> &nbsp;DESIGNAR TAREFAS</a></li>
+                            </ul>                       
+                        </p:panel>
+                        
+                    </div>
+                </ui:insert> 
+            </div>
+            
+            <div id="footer"></div>
+        </ui:define>
+    </ui:composition>
+
+</html>
+

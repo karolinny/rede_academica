@@ -8,14 +8,16 @@
         <ui:define name="conteudo">
             <div id="conteudo">
                 <ui:insert name="GERENCIAR GRUPOS">
-                    <div id="bloco">
+                    <ui:insert name="conteudo">                 
+                </ui:insert>
+                    <div id="grupos">
                         
-                        <p:panel header="O que deseja fazer ?">
-                       
-                        <a href="cadastrarGrupos.jsf" >CRIAR GRUPO</a>
-                        <a href="#">EXCLUIR GRUPO</a>
-                        <a href="#">EDITAR GRUPO</a>
-                            
+                        <p:panel header="Gerenciar grupos" footer="Gerenciamento">
+                            <ul>
+                                <li><a href="cadastrarGrupos.jsf" ><img src="../images/icones/add.png"/> &nbsp;CRIAR GRUPO</a></li>
+                                <li><a href="#"><img src="../images/icones/remove.png"/> &nbsp;EXCLUIR GRUPO</a></li>
+                                <li><a href="escolhegrupo.jsf"><img src="../images/icones/tools.png"/> &nbsp;EDITAR GRUPO</a></li>
+                            </ul> 
                         </p:panel>
                         
                     </div>

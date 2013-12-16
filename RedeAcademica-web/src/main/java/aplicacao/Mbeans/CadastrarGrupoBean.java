@@ -9,6 +9,7 @@ import br.edu.ifpb.entidades.Usuario;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Calendar;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -54,14 +55,14 @@ public class CadastrarGrupoBean {
         this.historicoUsusario = historicoUsusario;
     }
     
-    public void cadastrarGrupo()throws IOException{
-        String paginaRetorno = "addgrupo.jsf";
+    public String cadastrarGrupo()throws IOException{
+        String paginaRetorno = "cadastrarGrupos.jsf";
         grupoSession.inserirGrupo(grupo);
         addMessage("Grupo Criado com Sucesso !!");
         gerarHistoricoDeAcesso("Inserindo um novo grupo ao sistema: nome: " + grupo.getNome());
         grupo = new Grupo();
-        //FacesContext.getCurrentInstance().getExternalContext().redirect(paginaRetorno);
-        //return paginaRetorno;
+        FacesContext.getCurrentInstance().getExternalContext().redirect(paginaRetorno);
+        return paginaRetorno;
     }
     
      public void gerarHistoricoDeAcesso(String acao) {
@@ -76,6 +77,10 @@ public class CadastrarGrupoBean {
         historico.setAcao(acao);
         historicoUsusario.inserirHistorico(historico);
 
+    }
+     
+     public List<Grupo> listarGrupos() {
+        return grupoSession.listarGrupo();
     }
      
      public Usuario usuarioDaSessao() {

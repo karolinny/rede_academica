@@ -12,6 +12,7 @@
                 <div id="bloco">
 
                     <h:form>
+                        <p:growl id="messages" showDetail="true"/>  
                         <p:panel header="Cadastro Geral" styleClass="tenso">  
 
                             <h:panelGrid columns="2" columnClasses="label, value">
@@ -21,6 +22,9 @@
                                 <h:outputLabel class="poha" value="E-mail: "></h:outputLabel>
                                 <p:inputText value="#{UserBean.usuarioCadastro.email}"/>
 
+                                <h:outputText class="poha" value="Matrícula: " />  
+                                <p:inputText id="matricula" label="Matricula" value="#{UserBean.usuarioColaborador.matricula}" />
+                                                            
                                 <h:outputLabel class="poha" value="Login: "></h:outputLabel>
                                 <p:inputText value="#{UserBean.usuarioCadastro.login}"/>
 
@@ -31,7 +35,7 @@
                                 <p:fileUpload id="upload" fileUploadListener="#{UserBean.doUpload}"  mode="advanced"  
                                               auto="true" sizeLimit="100000000" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" showButtons="false" label="Procurar..." update="messages"/>
 
-                                <p:growl id="messages" showDetail="true"/>  
+                                
                                 <h:outputLabel class="poha" value="Tipo: "></h:outputLabel>
                                 <p:selectOneMenu value="#{UserBean.usuarioCadastro.tipo}">
                                     <f:selectItem itemLabel="Colaborador" itemValue="COLABORADOR"/>
@@ -42,6 +46,7 @@
                             </h:panelGrid>
                             <br />
                             <p:commandButton value="Salvar" action="#{UserBean.inserirUsuario()}"></p:commandButton>
+                            <p:commandButton value="Apagar" type="reset"/>
                         </p:panel>
                     </h:form>
                 </div>
