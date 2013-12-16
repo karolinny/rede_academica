@@ -95,6 +95,12 @@ public class CadastrarGrupoBean {
         return usuarioDaSessao;
     }
      
+     public void getgrupoEditar(Long id){
+         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("currentGrupo", grupoSession.recuperarGrupoId(id));
+         Grupo grupoDaSessao = (Grupo) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("currentGrupo");
+         System.out.println(grupoDaSessao.getId());
+     }
+     
       public void addMessage(String summary) {  
         FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary,  null);  
         FacesContext.getCurrentInstance().addMessage(null, message);  

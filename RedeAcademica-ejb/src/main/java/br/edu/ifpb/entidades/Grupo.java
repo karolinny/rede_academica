@@ -16,7 +16,8 @@ import javax.persistence.OneToMany;
 @Entity
 @NamedQueries({
     @NamedQuery(name = "grupo.recuperar", query = "SELECT g from Grupo g "),
-    @NamedQuery(name = "grupo.recuperapordiretor", query = "SELECT g FROM Grupo g WHERE g.id_criador = :diretor")    
+    @NamedQuery(name = "grupo.recuperapordiretor", query = "SELECT g FROM Grupo g WHERE g.id_criador = :diretor"),
+   
 })
 public class Grupo implements Serializable {
 

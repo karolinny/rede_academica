@@ -15,4 +15,6 @@ public interface GrupoSessionBeanLocal {
     public List<Grupo> listarGrupo();
      
     public List<Grupo> recuperarGrupoDiretor(int id);
+    
+     public Grupo recuperarGrupoId(Long id);
 }

@@ -12,9 +12,9 @@
                 </ui:insert>
                     <div id="grupos">
                         
-                        <p:panel header="Escolha qual grupo editar" footer="Grupos disponíveis">
+                        <p:panel header="Grupos que faço parte" footer="Grupos">
                             <p:dataList value="#{GrupoNovo.listarGruposPorID()}" var="grupo" itemType="disc">  
-                                <a href="editarGrupos.jsf"><h:inputHidden value="#{GrupoNovo.getgrupoEditar(grupo.id)}"/>#{grupo.nome}</a>
+                                #{grupo.nome}
                              </p:dataList> 
                         </p:panel>
                         
@@ -27,4 +27,3 @@
     </ui:composition>
 
 </html>
-
