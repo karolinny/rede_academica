@@ -13,9 +13,9 @@
                     <div id="grupos">
                         
                         <p:panel header="Escolha qual grupo editar" footer="Grupos disponíveis">
-                            <p:dataList value="#{GrupoNovo.listarGrupos()}" var="grupo" itemType="disc">  
-    #{grupo.nome}
-</p:dataList> 
+                            <p:dataList value="#{GrupoNovo.listarGruposPorID()}" var="grupo" itemType="disc">  
+                                 #{grupo.nome}
+                             </p:dataList> 
                         </p:panel>
                         
                     </div>

@@ -33,7 +33,8 @@ public class GrupoSessionBean implements GrupoSessionBeanLocal {
         return grupos;
     }
     
-    public List<Grupo> receperarGrupoDiretor(Long id) {
+    @Override
+    public List<Grupo> recuperarGrupoDiretor(int id) {
         List<Grupo> gruposdiretor = new ArrayList<Grupo>();
         try {
             Query query = grupoSession.createNamedQuery("grupo.recuperapordiretor");

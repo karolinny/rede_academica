@@ -38,7 +38,7 @@ public class Grupo implements Serializable {
     private List<Texto> textos;
     private String status;
     private String descricao;
-    private Long id_criador;
+    private int id_criador;
 
     public String getStatus() {
         return status;
@@ -96,11 +96,11 @@ public class Grupo implements Serializable {
         this.textos = textos;
     }
 
-    public Long getId_criador() {
+    public int getId_criador() {
         return id_criador;
     }
 
-    public void setId_criador(Long id_criador) {
+    public void setId_criador(int id_criador) {
         this.id_criador = id_criador;
     }
     

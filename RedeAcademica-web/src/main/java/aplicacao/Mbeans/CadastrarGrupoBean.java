@@ -56,9 +56,10 @@ public class CadastrarGrupoBean {
     }
     
     public String cadastrarGrupo()throws IOException{
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Sucesso", "Grupo Criado com Sucesso !!"));
         String paginaRetorno = "cadastrarGrupos.jsf";
+        grupo.setId_criador(usuarioDaSessao().getId());
         grupoSession.inserirGrupo(grupo);
-        addMessage("Grupo Criado com Sucesso !!");
         gerarHistoricoDeAcesso("Inserindo um novo grupo ao sistema: nome: " + grupo.getNome());
         grupo = new Grupo();
         FacesContext.getCurrentInstance().getExternalContext().redirect(paginaRetorno);
@@ -81,6 +82,10 @@ public class CadastrarGrupoBean {
      
      public List<Grupo> listarGrupos() {
         return grupoSession.listarGrupo();
+    }
+     
+      public List<Grupo> listarGruposPorID() {
+        return grupoSession.recuperarGrupoDiretor(usuarioDaSessao().getId());
     }
      
      public Usuario usuarioDaSessao() {

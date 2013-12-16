@@ -13,4 +13,6 @@ public interface GrupoSessionBeanLocal {
     public void removerGrupo(Grupo grupo);
 
     public List<Grupo> listarGrupo();
+     
+    public List<Grupo> recuperarGrupoDiretor(int id);
 }

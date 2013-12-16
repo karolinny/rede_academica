@@ -9,7 +9,9 @@
     <ui:composition template="indexDiretor.xhtml">
         <ui:define name="conteudo">
             <div id="bloco">
+                
                 <h:form>
+                     <p:growl id="growl" showDetail="true" sticky="true" />  
                     <p:panel header="Cadastrar novo grupo" styleClass="tenso"> 
 
 
@@ -41,7 +43,7 @@
                         <br />
                         <h:panelGrid columns="2">
 
-                            <p:commandButton value="Salvar" action="#{GrupoNovo.cadastrarGrupo()}"/>
+                            <p:commandButton value="Salvar" action="#{GrupoNovo.cadastrarGrupo()}" update="growl"/>
                             <p:commandButton value="Apagar" type="reset"/>
                         </h:panelGrid>
                     </p:panel>
