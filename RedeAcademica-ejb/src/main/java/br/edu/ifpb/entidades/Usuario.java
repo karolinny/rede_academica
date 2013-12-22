@@ -26,6 +26,7 @@ import javax.persistence.Temporal;
 
 @Entity
 @NamedQueries({
+    @NamedQuery(name = "usuario.recuperarTodos", query = "SELECT u from Usuario u "),
     @NamedQuery(name = "usuario.recuperar", query = "SELECT u from Usuario u where u.login = :login and u.senha = :senha"),
     @NamedQuery(name = "usuario.recuperaPeloLogin", query = "SELECT u FROM Usuario u WHERE u.login = :login")})
 @SequenceGenerator(name = "seq_gen", sequenceName = "usuario_seq", initialValue = 1, allocationSize = 20)

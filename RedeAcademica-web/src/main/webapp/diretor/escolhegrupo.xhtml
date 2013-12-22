@@ -4,7 +4,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
-   <ui:composition template="indexDiretor.xhtml">
+   <ui:composition template="composicao.xhtml">
         <ui:define name="conteudo">
             <div id="conteudo">
                 <ui:insert name="GERENCIAR GRUPOS">
@@ -13,8 +13,8 @@
                     <div id="grupos">
                         
                         <p:panel header="Escolha qual grupo editar" footer="Grupos disponíveis">
-                            <p:dataList value="#{GrupoNovo.listarGruposPorID()}" var="grupo" itemType="disc">  
-                                <a href="editarGrupos.jsf"><h:inputHidden value="#{GrupoNovo.getgrupoEditar(grupo.id)}"/>#{grupo.nome}</a>
+                            <p:dataList value="#{GrupoNovo.listarGruposPorID()}" var="grupo" itemType="circle">  
+                                <a href="editarGrupos.jsf"><h:inputHidden value="#{GrupoNovo.getgrupoEditar(grupo.id)}"/><img src="../images/icones/next.png"/> #{grupo.nome}</a>
                              </p:dataList> 
                         </p:panel>
                         

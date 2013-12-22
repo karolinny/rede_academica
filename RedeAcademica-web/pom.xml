@@ -48,11 +48,11 @@
         <artifactId>primefaces</artifactId>
       <version>3.4</version>
     </dependency>
-    <dependency>
-        <groupId>${project.groupId}</groupId>
-        <artifactId>RedeAcademica-ejb</artifactId>
-      <version>${project.version}</version>
-    </dependency>
+  <dependency>
+    <groupId>${project.groupId}</groupId>
+    <artifactId>RedeAcademica-ejb</artifactId>
+    <version>${project.version}</version>
+  </dependency>
 </dependencies>
 
 

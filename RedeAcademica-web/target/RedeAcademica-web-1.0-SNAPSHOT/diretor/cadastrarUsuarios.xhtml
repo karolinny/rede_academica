@@ -6,14 +6,16 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
-    <ui:composition template="indexDiretor.xhtml">
+      <ui:composition template="composicao.xhtml">
         <ui:define name="conteudo">
             <div id="conteudo">
-                <div id="bloco">
-
-                    <h:form>
+                <ui:insert name="GERENCIAR GRUPOS">
+                    <ui:insert name="conteudo">                 
+                </ui:insert>
+                    <div id="grupos">
+                    <h:form >
                         <p:growl id="messages" showDetail="true"/>  
-                        <p:panel header="Cadastro Geral" styleClass="tenso">  
+                        <p:panel header="Cadastro Geral" >  
 
                             <h:panelGrid columns="2" columnClasses="label, value">
                                 <h:outputLabel class="poha" value="Nome: "/>
@@ -50,6 +52,7 @@
                         </p:panel>
                     </h:form>
                 </div>
+                </ui:insert>
             </div>
             <div id="footer"></div>
         </ui:define>

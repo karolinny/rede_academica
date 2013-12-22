@@ -6,13 +6,17 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
-    <ui:composition template="indexDiretor.xhtml">
+     <ui:composition template="composicao.xhtml">
         <ui:define name="conteudo">
-            <div id="bloco">
+            <div id="conteudo">
+                <ui:insert name="GERENCIAR GRUPOS">
+                    <ui:insert name="conteudo">                 
+                </ui:insert>
+                    <div id="grupos">
                 
                 <h:form>
                      <p:growl id="growl" showDetail="true" sticky="true" />  
-                    <p:panel header="Cadastrar novo grupo" styleClass="tenso"> 
+                    <p:panel header="Cadastrar novo grupo" > 
 
 
                         <h:messages errorClass="error"/>  
@@ -48,6 +52,8 @@
                         </h:panelGrid>
                     </p:panel>
                 </h:form>
+            </div>
+                </ui:insert>
             </div>
         </ui:define>
     </ui:composition>

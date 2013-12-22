@@ -1,14 +1,59 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <ui:composition template="indexDiretor.xhtml">
+        <ui:define name="conteudo">
+            <div id="conteudo">
+
+                <div id="bloco">
+
+                    <h:form>
+                        <p:growl id="messages" showDetail="true"/>  
+                        <p:panel header="Editar Perfil " styleClass="tenso">  
+
+                            <h:panelGrid columns="2" columnClasses="label, value">
+                                <h:outputLabel class="poha" value="Nome: "/>
+                                <p:inplace id="basic">  
+                                    <p:inputText value="#{UserBean.usuarioDaSessao.nome}" />  
+                                </p:inplace>  
+
+
+                                <h:outputLabel class="poha" value="E-mail: "></h:outputLabel>
+                                <p:inplace >  
+                                    <p:inputText value="#{UserBean.usuarioDaSessao.email}"/>
+                                </p:inplace >  
+
+                                <h:outputText class="poha" value="Matrícula: " />  
+                                <p:inplace >  
+                                    <p:inputText id="matricula" label="Matricula" value="#{UserBean.usuarioDaSessao.matricula}" />
+                                </p:inplace > 
+
+                                <h:outputLabel class="poha" value="Senha: "></h:outputLabel>
+
+                                <p:password value="#{UserBean.usuarioDaSessao.senha}" feedback="true"   
+                                            promptLabel="Digite a nova senha" weakLabel="Fraca"  
+                                            goodLabel="Boa" strongLabel="Forte" inline="true"/>
+
+                                
+                                <h:outputLabel class="poha" value="Foto: "></h:outputLabel>
+                                <p:fileUpload id="upload" fileUploadListener="#{UserBean.doUpload}"  mode="advanced"  
+                                              auto="true" sizeLimit="100000000" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" showButtons="false" label="Procurar..." update="messages"/>
+                                  
+                            </h:panelGrid>
+                            <br />
+                            <p:commandButton value="Salvar"  ></p:commandButton>
+                            <p:commandButton value="Apagar" type="reset"/>
+                        </p:panel>
+                    </h:form>
+                </div>
+            </div>
+            <div id="footer"></div>
+        </ui:define>
+    </ui:composition>
 </html>
+

@@ -14,6 +14,7 @@ import java.io.Serializable;
 
 import java.sql.Timestamp;
 import java.util.Calendar;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
@@ -145,7 +146,13 @@ public class UserBean implements Serializable {
         this.usuarioDaSessao = usuarioDaSessao;
     }
     
-
+    public List<Usuario> listarGrupos() {
+        return userSessionB.listarUsuarios();
+    }
+    public void excluirUser(Usuario usEx){
+        userSessionB.removerUsuario(usEx);
+    }
+    
     public Usuario usuarioDaSessao() {
 
         usuarioDaSessao = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("currentUser");

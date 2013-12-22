@@ -45,8 +45,12 @@ public class GrupoSessionBean implements GrupoSessionBeanLocal {
         return gruposdiretor;
     }
     
+    @Override
      public Grupo recuperarGrupoId(Long id) {
-        
-       return grupoSession.find(Grupo.class, id);
+            return grupoSession.find(Grupo.class, id);
+    }
+    
+    public void adicionarParticipantes(Long id){
+       
     }
 }

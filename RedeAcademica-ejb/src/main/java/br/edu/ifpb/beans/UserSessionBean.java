@@ -31,7 +31,7 @@ public class UserSessionBean implements UserSessionBeanLocal {
 
     @Override
     public List<Usuario> listarUsuarios() {
-        Query query = entityManager.createQuery("SELECT u from usuario u ");
+        Query query = entityManager.createNamedQuery("usuario.recuperarTodos");
         List<Usuario> usuarios = new ArrayList<Usuario>();
         usuarios = query.getResultList();
 
@@ -50,6 +50,7 @@ public class UserSessionBean implements UserSessionBeanLocal {
 
     @Override
     public void removerUsuario(Usuario usuario) {
+        usuario = entityManager.find(Usuario.class, usuario.getId());
         entityManager.remove(usuario);
     }
 

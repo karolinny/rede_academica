@@ -8,6 +8,7 @@ import br.edu.ifpb.entidades.Historico;
 import br.edu.ifpb.entidades.Usuario;
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import javax.ejb.EJB;
@@ -99,6 +100,13 @@ public class CadastrarGrupoBean {
          FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("currentGrupo", grupoSession.recuperarGrupoId(id));
          Grupo grupoDaSessao = (Grupo) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("currentGrupo");
          System.out.println(grupoDaSessao.getId());
+     }
+     
+     public void addParticipante(Usuario user){
+         Grupo grupoDaSessao = (Grupo) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("currentGrupo");
+         List<Usuario> users = new ArrayList<Usuario>();
+         users.add(user);
+         grupoDaSessao.setUsuario(users);
      }
      
       public void addMessage(String summary) {  

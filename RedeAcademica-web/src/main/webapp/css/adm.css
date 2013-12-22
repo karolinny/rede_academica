@@ -2,8 +2,7 @@
     Document   : style
     Created on : 12/04/2013, 18:45:21
     Author     : karol
-    Description:
-        Purpose of the stylesheet follows.
+    Purpose of the stylesheet follows.
 */
 html, body {
 	height: 100%;
@@ -186,7 +185,7 @@ ul li{
 } 
 
 #img{
-    margin-top: 10%;
+    margin-top: 7%;
     margin-left: 3%;
     float: left;
     padding-right: 100px;
@@ -218,7 +217,20 @@ a:link
 #grupos{
     float: left;
     margin-top: 2%;
-    width: 700px;
+    width: 680px;
+}
+p{
+    margin-bottom: 146px;
+}
+#atualizacoes{
+    float:left;
+    margin-top: 2%;
+    width:680px;
+    margin-left: 1%;
     
-    
+     
+}
+#meusgrupos{
+    float: left;        
+    margin-top: 1.8%;
 }
