@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <link href="../css/adm.css" text="text/css" rel="stylesheet"/>
+        <title>Diretor</title>
+    </h:head>
+    <h:body>
+        <div id="tudo">
+            <h:form>   
+                <div id="topo"><div id="topoesquerda">AcadGroup </div><div id="topodireita">Colaborador Diretor</div></div>
+                <div id="logo"></div>
+                <p:megaMenu styleClass="inv">  
+
+                    <p:menuitem value="Principal" url="indexDiretor.jsf" icon="ui-icon-check"/>
+
+                    <p:menuitem value="Gerenciar Contas" url="gerenciarcontas.jsf" icon="ui-icon-wrench"/>
+
+                    <p:menuitem value="Gerenciar Grupos" url="gerenciargrupos.jsf" icon="ui-icon-wrench"/>
+
+                    <p:menuitem value="Histórico" url="listaDeRegistro.jsf" icon="ui-icon-document"/>
+
+                    <p:menuitem value="Meus Grupos" url="listaMeusGrupos.jsf" icon="ui-icon-document"/>
+
+                    <p:menuitem value="Sair" action="#{UserBean.encerrarSessao()}" icon="ui-icon-extlink" />  
+                </p:megaMenu>  
+
+                <div id="conteudo">
+
+                    <ui:insert name="conteudo">
+
+                        <div id="perfil">
+                            <p:panel id="lateralesquerda">  
+                                <p:graphicImage value="#{UserBean.usuarioDaSessao.foto}" width="120px" height="155px" /> 
+                                <div id="menuesquerda">
+                                    <a href="editarperfil.jsf">Editar Perfil</a>
+                                    <a href="#">Localizar amigos</a>
+                                    <a href="#">Ver amigos</a>
+                                </div>
+                            </p:panel>
+                           
+
+                        </div>
+
+                    </ui:insert> 
+                </div>
+                
+            </h:form>
+               
+                <div id="meusgrupos">
+                    <p:orderList value="#{GrupoNovo.listarGruposPorID()}" var="grupos"  
+                                 itemValue="#{grupos}"  controlsLocation="none" id="customList">  
+                        <f:facet name="caption">Meus Grupos</f:facet>  
+
+                         <p:column style="width:75%;">  
+                             <a href="editarGrupos.jsf"> #{grupos.id} - #{grupos.nome}  </a>
+                        </p:column>  
+                    </p:orderList>  
+                </div>
+
+                <div id="footer">Copyright © IFPB 2013</div>
+        </div>
+    </h:body>
+
+</html>
+

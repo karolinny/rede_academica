@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="composicao.xhtml">
+        <ui:define name="conteudo">
+            <div id="conteudo">
+                <ui:insert name="GERENCIAR GRUPOS">
+                    <ui:insert name="conteudo">                 
+                    </ui:insert>
+                    <div id="grupos">
+                       
+                        <p:dataGrid var="usuarioatual" value="#{UserBean.listarGrupos()}" columns="3"  
+                                    rows="12" paginator="true"  
+                                    paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                                    rowsPerPageTemplate="9,12,15">  
+
+                            <p:panel header="#{usuarioatual.nome}" style="text-align:center">  
+                                 <p:growl id="mensa" showDetail="true" />
+                                
+                                    <h:panelGrid columns="1" style="width:100%">  
+                                        <p:graphicImage value="#{usuarioatual.foto}" width="30px" height="35px"/>   
+
+                                        <h:outputText value="#{usuarioatual.email}" />
+                                        <a href="#">#{usuarioatual.nome}</a>             
+                                        <p:commandButton  value="Excluir" styleClass="ui-ui-icon-cancel" onclick="cd.show()" />
+                                        <p:confirmDialog message="Você realmente deseja excluir #{usuarioatual.nome}?"
+                                                         header="Excluir usuário" severity="alert" widgetVar="cd">
+                                            <p:commandButton value="Sim" actionListener="#{UserBean.excluirUser(usuarioatual)}" 
+                                                             update="mensa" />
+                                            <p:commandButton value="Não"  type="button" /> 
+                                        </p:confirmDialog>  
+                                                                              
+                                    </h:panelGrid> 
+                                                            </p:panel>  
+
+                        </p:dataGrid>  
+
+
+                    </div>
+                </ui:insert> 
+            </div>
+
+            <div id="footer"></div>
+        </ui:define>
+    </ui:composition>
+
+</html>
