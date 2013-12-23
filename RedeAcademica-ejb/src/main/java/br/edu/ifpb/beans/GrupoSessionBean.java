@@ -1,6 +1,7 @@
 package br.edu.ifpb.beans;
 
 import br.edu.ifpb.entidades.Grupo;
+import br.edu.ifpb.entidades.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -21,6 +22,7 @@ public class GrupoSessionBean implements GrupoSessionBeanLocal {
 
     @Override
     public void removerGrupo(Grupo grupo) {
+         grupo = grupoSession.find(Grupo.class, grupo.getId());
         grupoSession.remove(grupo);
         
     }

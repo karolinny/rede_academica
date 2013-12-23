@@ -149,8 +149,8 @@ public class UserBean implements Serializable {
     public List<Usuario> listarGrupos() {
         return userSessionB.listarUsuarios();
     }
-    public void excluirUser(Usuario usEx){
-        userSessionB.removerUsuario(usEx);
+    public void excluirUser(Usuario usuarioExcluido){
+        userSessionB.removerUsuario(usuarioExcluido);
     }
     
     public Usuario usuarioDaSessao() {

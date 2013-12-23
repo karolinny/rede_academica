@@ -1,14 +1,52 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="composicao.xhtml">
+        <ui:define name="conteudo">
+            <div id="conteudo">
+                <ui:insert name="GERENCIAR GRUPOS">
+                    <ui:insert name="conteudo">                 
+                    </ui:insert>
+                    <div id="grupos">
+                       
+                        <p:dataGrid var="grupoatual" value="#{GrupoNovo.listarGruposPorID()}" columns="3"  
+                                    rows="12" paginator="true"  
+                                    paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                                    rowsPerPageTemplate="9,12,15">  
+
+                            <p:panel header="#{grupoatual.nome}" style="text-align:center">  
+                                 <p:growl id="mensa" showDetail="true" />
+                                
+                                    <h:panelGrid columns="1" style="width:100%">  
+                                        <h:outputText value="#{grupoatual.descricao}" />
+                                                 
+                                        <p:commandButton  value="Excluir" styleClass="ui-ui-icon-cancel" onclick="cd.show()" />
+                                        
+                                        <p:confirmDialog message="Você realmente deseja excluir o grupo #{grupoatual.nome}?"
+                                                         header="Excluir grupo" severity="alert" widgetVar="cd">
+                                           
+                                            <p:commandButton value="Sim" actionListener="#{GrupoNovo.excluirGrupo(grupoatual)}" 
+                                                             update="mensa" onclick="cd.hide(); #{GrupoNovo.listarGruposPorID()}"/>
+                                                 <p:commandButton value="Não"  type="button" onclick="cd.hide()"/> 
+                                         
+                                                 
+                                                 </p:confirmDialog>  
+                                                                              
+                                    </h:panelGrid> 
+                                                            </p:panel>  
+
+                        </p:dataGrid>  
+
+
+                    </div>
+                </ui:insert> 
+            </div>
+
+            <div id="footer"></div>
+        </ui:define>
+    </ui:composition>
+
 </html>

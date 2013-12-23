@@ -89,6 +89,10 @@ public class CadastrarGrupoBean {
         return grupoSession.recuperarGrupoDiretor(usuarioDaSessao().getId());
     }
      
+     public void excluirGrupo(Grupo grupoExcluido){
+         grupoSession.removerGrupo(grupoExcluido);
+     }
+     
      public Usuario usuarioDaSessao() {
 
         Usuario usuarioDaSessao = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("currentUser");
