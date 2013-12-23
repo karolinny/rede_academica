@@ -191,14 +191,15 @@ public class UserBean implements Serializable {
             byte[] foto = event.getFile().getContents();  
             String nomeArquivo = event.getFile().getFileName();    
             FacesContext facesContext = FacesContext.getCurrentInstance();    
-            ServletContext scontext = (ServletContext) facesContext.getExternalContext().getContext();    
-            String arquivo = scontext.getRealPath("/uploads/perfil/" + new java.util.Date().getTime()+ nomeArquivo );  
+            ServletContext scontext = (ServletContext) facesContext.getExternalContext().getContext(); 
+            String nomeSalva = "/uploads/perfil/" + new java.util.Date().getTime()+ nomeArquivo;
+            String arquivo = scontext.getRealPath(nomeSalva);  
               
             File f=new File(arquivo);  
             if(!f.getParentFile().exists())f.getParentFile().mkdirs();  
             if(!f.exists())f.createNewFile();  
             
-            this.usuarioCadastro.setFoto("/uploads/perfil/" + nomeArquivo);
+            this.usuarioCadastro.setFoto(nomeSalva);
             System.out.println(f.getAbsolutePath());  
             FileOutputStream fos=new FileOutputStream(arquivo);  
             fos.write(foto);  
